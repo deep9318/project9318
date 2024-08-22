@@ -1,0 +1,13 @@
+import jason
+import boto3
+
+sourcebucketpath = 'first-bucket-name'
+sourcefilename = 'file-name'
+targetbucketpath ='second-bucket-name'
+targetfilename = 'file-name'
+
+def lambda_handler(event, context):
+  s3 = boto3.resource('s3')
+  copy_source = {
+  'Bucket' : sourcebucketpath,
+  
