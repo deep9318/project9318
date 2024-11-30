@@ -10,7 +10,7 @@ def lambda_handler(event, context):
   s3 = boto3.resource('s3')
   copy_source = {
   'Bucket' : sourcebucketpath,
-  'key'   :  sourcefilename
+  'Key'   :  sourcefilename
   }
 
   s3.meta.client.copy(copy_source, targetbucketpath, targetfilename)
